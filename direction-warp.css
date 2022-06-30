@@ -1,0 +1,144 @@
+/* 
+Flexbox
+    display:flex
+        Convierte el contendor en un contexto para flexbox y hace que el contenedor sea un elemento de bloque para los elementos que lo rodean
+    display:inline-flex
+        Convierte el contenedor en un contexto para flexbox y hace que el contenedor sea un elememto en linea para los elementos que lo rodean
+    
+    flex-direction: row(default) | row-reverse | column | column-reverse
+        Modifica la dirección y cual es el eje principal.
+        Por defecto es row (horizontalmente de izquierda a derecha)
+        row-reverse (horizontal de derecha a izquierda)
+        column vertical de arriba abajo 
+        column-reverse vertical de abajo arriba
+        
+    flex-wrap: no-wrap(default) | wrap | wrap-reverse
+        Controla si los elementos saltaran de línea o no
+        no-wrap es el valor por defecto, un contenedor flex va a hacer que todos los elementos se queden en una linea si no le especificamos lo contrario wrap hace que los elementos que no quepan en una linea (manteniendo sus dimensiones, si las tuvieran) salten a la linea inferior.
+        wrap-reverse hace lo mismo  que wrap pero en lugar de hacer que salten a la linea inferior, hace que salten a la linea superior.
+        
+Alineamiento 
+    Estas propiedades para alinear se aplican SIEMPRE al flex-container
+    
+    Existen propiedades para el main-axis y para el cross-axis:
+        justify-content: flex-start(default) | center | space-between | space-around | space-evenly | flex-end
+
+        flex-start alinea los elementos al principio del main axis 
+        center centra los elementos en la mitad del main axis 
+        flex-end alinea los elementos al final del main axis 
+        space-between deistribuye los item a la misma distancia y no deja espacio exterior ni el primer ni el ultimo flex-end
+        space-around distribuye  los items a la misma distancia y deja un espacio exterior en el primero y en el ultijmo flex-item 
+        space-evenly distribuye los items y los espacios exteriores del primer y ultimo flex-item dejando la misma distancia entre todos.
+    cross-axis 
+        aling-items: una sola linea.
+            flex-start | center | flex-end | stretch(default) | baseline
+        aling-content: varias lineas 
+            felx-start | center | flex-end | stretch(default) | baseline
+
+        align-self: Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross axis 
+
+    TRUCO EXTRA : 
+        Si solo tenemos un elemento en un contenedor flex el comportamiento de margin no es el mismo 
+        margin auto centra en medio de toda la pagina 
+        margin bottom left etc, el elemento ira pegado al limite del contenedor con respecto a la direccion 
+        
+        
+    Flexbox
+        Propiedad felx: Es un shorthand que engloba las siguientes propiedades.
+        Todas las medidas se establecen en funcion del espacio disponible en el contenedor
+        
+        flex-grow: Establece que hacer cuando hay espacio suficiente. Cuantas divisiones coge el elemento. El valor es un entero 0 hasta n o auto 
+        
+        flex-shrink: Establece que hacer cuando no hay espacio suficiente. Cuantas divisiones pierde el elemento. El valor es un entero desde 0 hasta n
+        
+        felx-basis: Establece cuando tiene que ocupar el item antes de encojer o extenderse. Flex basis prevalece ante width si el main-axis es horizontal o ante height si el main-axis es vertical. Evalor es un entero desde 0 hastas n 
+        
+    Los valores de flex son: 
+        Por defecto es 0 a 1 auto 
+        auto: 1 1 auto;
+        none: 0 0 auto;
+        
+    Order: Establece que orden ocupara el elemento en el contenedor flex. El valor es el "peso" respecto a los valores que tengan los otros elementos. Por defecto es 0
+
+    Extras:
+        Existen un shorthand para flex-direction y flex-wrap. flex-flow: flex-direction flex-wrap.
+        flex-flow: column wrap
+    */
+
+
+.flex-container{
+    background-color: #fca170;
+    height: 300px;
+    width: 400px;
+    display: flex;
+}
+
+.flex-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: aliceblue;
+    background-color: #9a348e;
+    order: 0;
+}
+
+.flex-item:nth-child(2){
+    background-color: rgb(57, 126, 122);
+    order: -1;
+}
+
+.flex-item:nth-child(3){
+    background-color: lightskyblue;
+    order: 1;
+}
+
+.flex-item:nth-child(4){
+    background-color: darkgoldenrod;
+}
+
+/* .box {
+    border: 1px solid black;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.box img{
+    max-width: 50%;
+
+}
+ */
+/* .prices {
+    display: flex;
+    align-items: flex-start;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.prices_item{
+    width: 25%;
+    height: 300px;
+}
+
+.prices_item:first-child{
+    background: peru;
+}
+
+.prices_item:nth-child(2){
+    background: green;
+    line-height: 20px;
+    align-self: center;
+}
+
+.prices_item:nth-child(3){
+    background: indianred;
+    line-height: 15px;
+}
+
+.prices_item:nth-child(4){
+    background: lightgreen;
+    line-height: 50px;
+} */
