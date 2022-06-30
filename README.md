@@ -6,7 +6,7 @@ Este portafolio fue creado con HTML y CSS, con metodologia BEM y una arquitectur
   Josue Bonilla 
 
 * [LinkedIn](https://www.linkedin.com/in/josue-bonilla-3b0a54241)
-  [Github](https://github.com/josuecode01)
+* [Github](https://github.com/josuecode01)
 
   ## ver ejemplo en vivo 
   -[enlacegithubpages](Enlacegiyhubpages)
